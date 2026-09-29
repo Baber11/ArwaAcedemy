@@ -26,11 +26,15 @@ function fileToDataUrl(file: File): Promise<string> {
 }
 
 export async function POST(request: Request) {
-  const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+  const scriptUrl = process.env.GOOGLE_SCRIPT_URL?.trim();
 
   if (!scriptUrl) {
     return NextResponse.json(
-      { ok: false, message: "GOOGLE_SCRIPT_URL is not configured on the server." },
+      {
+        ok: false,
+        message:
+          "GOOGLE_SCRIPT_URL is not configured. Add it in .env.local for local, or in your host Environment Variables (Vercel/hosting) for production, then redeploy.",
+      },
       { status: 500 },
     );
   }
