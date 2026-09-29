@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HomeCourseCard } from "@/components/CourseCards";
+import { LimitedSeatsBanner } from "@/components/DesignBlocks";
 import Reveal from "@/components/Reveal";
 import { POPULAR_COURSES } from "@/lib/courses";
 
@@ -38,18 +39,25 @@ const WHY = [
 export default function HomePage() {
   return (
     <>
-      <section className="w-full max-w-none hero-enter">
-        <Link href="/registration" className="block w-full" aria-label="Enroll Now">
-          <Image
-            src="/images/hero-home.png"
-            alt="When opportunities blur, adjust your aim — Join ARWA Institute"
-            width={1280}
-            height={578}
-            priority
-            className="w-full h-auto block"
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
-          />
+      {/* Hero: design export + custom pressable Enroll CTA overlay */}
+      <section className="relative w-full max-w-none hero-enter overflow-hidden">
+        <Image
+          src="/images/hero-home.png"
+          alt="When opportunities blur, adjust your aim — Join ARWA Institute"
+          width={1280}
+          height={578}
+          priority
+          className="w-full h-auto block"
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+        />
+        {/* Invisible hit-area over design "Enroll Now!" text — keeps pressable CTA */}
+        <Link
+          href="/registration"
+          className="absolute left-[3%] sm:left-[5%] bottom-[10%] sm:bottom-[12%] md:bottom-[14%] z-10 block w-[38%] sm:w-[28%] md:w-[22%] h-[12%] sm:h-[14%] rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E31E24]"
+          aria-label="Enroll Now"
+        >
+          <span className="sr-only">Enroll Now</span>
         </Link>
       </section>
 
@@ -99,7 +107,7 @@ export default function HomePage() {
           <Reveal className="flex justify-center mt-8 md:mt-10" delay={200}>
             <Link
               href="/courses"
-              className="inline-flex items-center gap-2 bg-[#ffc107] text-[#111] font-bold text-sm px-6 py-3 rounded-md hover:bg-[#fecb00] btn-yellow"
+              className="inline-flex items-center gap-2 bg-[#FF8A00] text-white font-bold text-sm px-7 py-3.5 rounded-md hover:bg-[#e67a00] transition shadow-md"
             >
               View All Courses →
             </Link>
@@ -110,15 +118,7 @@ export default function HomePage() {
       <section className="pb-8 md:pb-12">
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6">
           <Reveal>
-            <Image
-              src="/images/banner-limited-seats.png"
-              alt="Limited seats available"
-              width={1200}
-              height={400}
-              className="w-full h-auto block rounded-xl sm:rounded-2xl"
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              style={{ width: "100%", height: "auto" }}
-            />
+            <LimitedSeatsBanner />
           </Reveal>
         </div>
       </section>
@@ -180,10 +180,7 @@ export default function HomePage() {
                 freelancing, jobs, and online earning opportunities with expert mentorship and
                 recognized certification.
               </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center rounded-md bg-[#00215E] text-white text-sm font-semibold px-5 py-3 hover:bg-[#003087] btn-navy"
-              >
+              <Link href="/about" className="btn-navy">
                 Learn More About Us
               </Link>
             </div>
@@ -200,7 +197,12 @@ function FeatureIcon({ type }: { type: string }) {
     return (
       <svg className={common} viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="14" r="6" stroke="currentColor" strokeWidth="2" />
-        <path d="M8 32c2-6 6-9 12-9s10 3 12 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path
+          d="M8 32c2-6 6-9 12-9s10 3 12 9"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
       </svg>
     );
   }
@@ -216,13 +218,23 @@ function FeatureIcon({ type }: { type: string }) {
     return (
       <svg className={common} viewBox="0 0 40 40" fill="none">
         <rect x="10" y="8" width="20" height="24" rx="2" stroke="currentColor" strokeWidth="2" />
-        <path d="M15 16h10M15 21h10M15 26h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path
+          d="M15 16h10M15 21h10M15 26h6"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
       </svg>
     );
   }
   return (
     <svg className={common} viewBox="0 0 40 40" fill="none">
-      <path d="M20 8l3 7h7l-5.5 4.5 2 7.5L20 23l-6.5 4 2-7.5L10 15h7l3-7z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+      <path
+        d="M20 8l3 7h7l-5.5 4.5 2 7.5L20 23l-6.5 4 2-7.5L10 15h7l3-7z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -232,7 +244,11 @@ function WhyIcon({ type }: { type: string }) {
   if (type === "skills") {
     return (
       <svg {...props}>
-        <path d="M12 3l2 5h5l-4 3.5 1.5 5L12 14l-4.5 2.5L9 11.5 5 8h5l2-5z" stroke="currentColor" strokeWidth="1.8" />
+        <path
+          d="M12 3l2 5h5l-4 3.5 1.5 5L12 14l-4.5 2.5L9 11.5 5 8h5l2-5z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
       </svg>
     );
   }
@@ -248,7 +264,12 @@ function WhyIcon({ type }: { type: string }) {
     return (
       <svg {...props}>
         <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.8" />
-        <path d="M5 19c1.5-3.2 4-5 7-5s5.5 1.8 7 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path
+          d="M5 19c1.5-3.2 4-5 7-5s5.5 1.8 7 5"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
       </svg>
     );
   }

@@ -1,23 +1,26 @@
 import Image from "next/image";
-import Link from "next/link";
 import { GridCourseCard } from "@/components/CourseCards";
+import {
+  AllCoursesIncludeCard,
+  ConsultationBanner,
+  SpecialOfferCard,
+} from "@/components/DesignBlocks";
 import Reveal from "@/components/Reveal";
 import { ALL_COURSES } from "@/lib/courses";
-import { SITE } from "@/lib/constants";
 
 const HERO_FEATURES = [
-  { title: "Practical Learning", desc: "100% Practical Classes" },
-  { title: "Expert Trainers", desc: "Industry Professionals" },
-  { title: "Certification", desc: "Recognized Certificates" },
+  { title: "Practical Learning", desc: "100% Practical Classes", icon: "practice" },
+  { title: "Expert Trainers", desc: "Industry Professionals", icon: "trainer" },
+  { title: "Certification", desc: "Recognized Certificates", icon: "cert" },
 ] as const;
 
 const STATS = [
-  { value: "50+", label: "Courses Available" },
-  { value: "500+", label: "Students Enrolled" },
-  { value: "100+", label: "Projects Completed" },
-  { value: "Expert", label: "Trainers" },
-  { value: "100%", label: "Practical Learning" },
-  { value: "Certificate", label: "Included" },
+  { value: "50+", label: "Courses Available", icon: "book" },
+  { value: "500+", label: "Students Enrolled", icon: "users" },
+  { value: "100+", label: "Projects Completed", icon: "project" },
+  { value: "Expert", label: "Trainers", icon: "trainer" },
+  { value: "100%", label: "Practical Learning", icon: "practice" },
+  { value: "Certificate", label: "Included", icon: "cert" },
 ] as const;
 
 export default function CoursesPage() {
@@ -33,18 +36,21 @@ export default function CoursesPage() {
               Learn. Practice. <span className="text-sky">Get Skilled.</span>
             </h1>
             <p className="text-white/80 text-sm md:text-base max-w-md mb-6 sm:mb-8 leading-relaxed">
-              Industry-focused courses with practical training to help you build your career
-              and earn online.
+              Industry-focused courses with practical training to help you build your career and
+              earn online.
             </p>
-            <div className="flex flex-wrap gap-4 sm:gap-6">
+            <div className="flex flex-wrap gap-3">
               {HERO_FEATURES.map((f) => (
-                <div key={f.title} className="flex items-start gap-2.5">
-                  <span className="mt-0.5 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center shrink-0">
-                    <CheckMini />
+                <div
+                  key={f.title}
+                  className="flex items-center gap-2.5 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm px-3.5 py-2.5 min-w-[150px]"
+                >
+                  <span className="w-8 h-8 rounded-full bg-sky/20 text-sky flex items-center justify-center shrink-0">
+                    <HeroFeatIcon type={f.icon} />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold">{f.title}</p>
-                    <p className="text-xs text-white/65">{f.desc}</p>
+                    <p className="text-sm font-semibold leading-tight">{f.title}</p>
+                    <p className="text-[11px] text-white/65">{f.desc}</p>
                   </div>
                 </div>
               ))}
@@ -72,13 +78,13 @@ export default function CoursesPage() {
 
       <section className="section-pad pt-8">
         <div className="container-site">
-          <div className="text-center mb-10">
+          <Reveal className="text-center mb-10">
             <div className="flex items-center justify-center gap-4 mb-2">
-              <span className="h-px w-12 bg-yellow" />
-              <p className="text-yellow text-xs font-bold tracking-[0.2em] uppercase">
+              <span className="h-px w-12 bg-blue/40" />
+              <p className="text-blue text-xs font-bold tracking-[0.2em] uppercase">
                 Explore Our Courses
               </p>
-              <span className="h-px w-12 bg-yellow" />
+              <span className="h-px w-12 bg-blue/40" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-navy">
               Popular <span className="text-blue">Courses</span>
@@ -86,7 +92,7 @@ export default function CoursesPage() {
             <p className="text-muted mt-3 text-sm max-w-lg mx-auto">
               Choose from our carefully designed programs to launch your multimedia career.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {ALL_COURSES.map((course, i) => (
@@ -94,56 +100,12 @@ export default function CoursesPage() {
                 <GridCourseCard course={course} />
               </Reveal>
             ))}
-
-            <article className="bg-navy rounded-xl p-5 text-white flex flex-col relative overflow-hidden min-h-[320px]">
-              <h3 className="text-yellow font-bold text-lg mb-4">All Courses Include</h3>
-              <ul className="space-y-2.5 text-sm flex-1 relative z-10">
-                {[
-                  "100% Practical Training",
-                  "Expert Instructors",
-                  "Recognized Certificate",
-                  "Career Guidance",
-                  "Project-Based Learning",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="text-yellow">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/registration" className="btn-yellow mt-4 w-fit relative z-10">
-                Enroll Now →
-              </Link>
-              <div className="absolute bottom-0 right-0 w-28 h-28 opacity-80">
-                <Image
-                  src="/images/grad-cap-diploma.png"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  sizes="112px"
-                />
-              </div>
-            </article>
-
-            <article className="bg-white rounded-xl card-shadow border border-border/60 p-5 flex flex-col relative overflow-hidden min-h-[320px]">
-              <span className="absolute top-0 left-0 bg-red text-white text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-br-lg">
-                SPECIAL OFFER
-              </span>
-              <div className="mt-8 flex-1">
-                <h3 className="text-navy font-extrabold text-2xl leading-tight mb-3">
-                  Save More
-                  <br />
-                  Learn More!
-                </h3>
-                <p className="text-muted text-sm leading-relaxed mb-6">
-                  Enroll in multiple courses and get exclusive discounts. Ask our advisors for
-                  current bundle offers.
-                </p>
-              </div>
-              <Link href="/registration" className="btn-navy w-full">
-                Claim Offer
-              </Link>
-            </article>
+            <Reveal delay={80} className="sm:col-span-2">
+              <AllCoursesIncludeCard />
+            </Reveal>
+            <Reveal delay={120}>
+              <SpecialOfferCard />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -151,9 +113,12 @@ export default function CoursesPage() {
       <section className="bg-bg-soft border-y border-border">
         <div className="container-site py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
           {STATS.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-navy font-extrabold text-xl">{s.value}</p>
-              <p className="text-muted text-xs mt-1">{s.label}</p>
+            <div key={s.label} className="text-center flex flex-col items-center gap-2">
+              <span className="w-10 h-10 rounded-full bg-sky/15 text-blue flex items-center justify-center">
+                <HeroFeatIcon type={s.icon} />
+              </span>
+              <p className="text-navy font-extrabold text-lg leading-none">{s.value}</p>
+              <p className="text-muted text-xs">{s.label}</p>
             </div>
           ))}
         </div>
@@ -161,52 +126,65 @@ export default function CoursesPage() {
 
       <section className="section-pad">
         <div className="container-site">
-          <div className="relative rounded-2xl bg-navy overflow-hidden px-6 py-10 md:px-12 md:py-12 grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-52 md:h-60">
-              <Image
-                src="/images/consultation-books.png"
-                alt="Books and graduation cap"
-                fill
-                className="object-contain"
-                sizes="400px"
-              />
-            </div>
-            <div className="text-white">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                Not Sure Which Course is Right for You?
-              </h2>
-              <p className="text-sky text-sm mb-6">
-                Contact our advisors and get free career guidance.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-yellow">
-                  Get Free Consultation →
-                </Link>
-                <a
-                  href={SITE.phoneHref}
-                  className="inline-flex items-center gap-2 border border-white/50 text-white text-sm font-semibold px-4 py-2.5 rounded-md hover:bg-white/10 transition-colors"
-                >
-                  {SITE.phone}
-                </a>
-              </div>
-            </div>
-          </div>
+          <Reveal>
+            <ConsultationBanner />
+          </Reveal>
         </div>
       </section>
     </>
   );
 }
 
-function CheckMini() {
+function HeroFeatIcon({ type }: { type: string }) {
+  const props = { width: 16, height: 16, viewBox: "0 0 24 24", fill: "none" as const };
+  if (type === "trainer" || type === "users") {
+    return (
+      <svg {...props}>
+        <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.8" />
+        <path
+          d="M5 19c1.5-3 4-4.5 7-4.5S17.5 16 19 19"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+  if (type === "cert") {
+    return (
+      <svg {...props}>
+        <rect x="6" y="3" width="12" height="16" rx="1.5" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  if (type === "book") {
+    return (
+      <svg {...props}>
+        <path
+          d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5V5.5z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+      </svg>
+    );
+  }
+  if (type === "project") {
+    return (
+      <svg {...props}>
+        <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.8" />
+        <path
+          d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+      </svg>
+    );
+  }
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M5 12l5 5L20 7"
-        stroke="white"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg {...props}>
+      <rect x="3" y="5" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8 21h8M12 17v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }

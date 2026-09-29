@@ -7,6 +7,8 @@ export type Course = {
   level?: string;
   accent: string;
   image: string;
+  /** Optional full header thumbnail (Figma export) used on home cards */
+  headerImage?: string;
 };
 
 export const POPULAR_COURSES: Course[] = [
@@ -18,7 +20,7 @@ export const POPULAR_COURSES: Course[] = [
     price: "PKR. 3,000",
     level: "Beginner",
     accent: "#00C4CC",
-    image: "/images/course-canva.png",
+    image: "/images/courses/canva.png",
   },
   {
     id: "capcut",
@@ -28,7 +30,8 @@ export const POPULAR_COURSES: Course[] = [
     price: "PKR. 3,000",
     level: "Beginner",
     accent: "#000000",
-    image: "/images/course-capcut.png",
+    image: "/images/courses/capcut.png",
+    headerImage: "/images/courses/capcut-header.png",
   },
   {
     id: "uiux",
@@ -38,7 +41,7 @@ export const POPULAR_COURSES: Course[] = [
     price: "PKR. 8,000",
     level: "Intermediate",
     accent: "#A259FF",
-    image: "/images/course-uiux.png",
+    image: "/images/courses/figma.png",
   },
   {
     id: "marketing",
@@ -48,7 +51,7 @@ export const POPULAR_COURSES: Course[] = [
     price: "PKR. 8,000",
     level: "Intermediate",
     accent: "#FF6B35",
-    image: "/images/course-marketing.png",
+    image: "/images/courses/marketing.png",
   },
   {
     id: "youtube",
@@ -58,7 +61,7 @@ export const POPULAR_COURSES: Course[] = [
     price: "PKR. 5,000",
     level: "Beginner",
     accent: "#FF0000",
-    image: "/images/course-youtube.png",
+    image: "/images/courses/youtube.png",
   },
 ];
 
@@ -71,7 +74,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 3,000",
     level: "Beginner",
     accent: "#00C4CC",
-    image: "/images/course-canva.png",
+    image: "/images/courses/canva.png",
   },
   {
     id: "capcut-editing",
@@ -81,7 +84,8 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 3,000",
     level: "Beginner",
     accent: "#111111",
-    image: "/images/course-capcut.png",
+    image: "/images/courses/capcut.png",
+    headerImage: "/images/courses/capcut-header.png",
   },
   {
     id: "uiux-figma",
@@ -91,7 +95,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 8,000",
     level: "Intermediate",
     accent: "#A259FF",
-    image: "/images/course-uiux.png",
+    image: "/images/courses/uiux.png",
   },
   {
     id: "digital-marketing",
@@ -101,7 +105,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 8,000",
     level: "Intermediate",
     accent: "#FF6B35",
-    image: "/images/course-marketing.png",
+    image: "/images/courses/marketing.png",
   },
   {
     id: "youtube-earning",
@@ -111,7 +115,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 5,000",
     level: "Beginner",
     accent: "#FF0000",
-    image: "/images/course-youtube.png",
+    image: "/images/courses/youtube.png",
   },
   {
     id: "photoshop",
@@ -121,7 +125,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 6,000",
     level: "Beginner",
     accent: "#31A8FF",
-    image: "/images/course-photoshop.png",
+    image: "/images/courses/photoshop.png",
   },
   {
     id: "illustrator",
@@ -131,7 +135,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 6,000",
     level: "Intermediate",
     accent: "#FF9A00",
-    image: "/images/course-illustrator.png",
+    image: "/images/courses/illustrator.svg",
   },
   {
     id: "premiere",
@@ -141,7 +145,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 8,000",
     level: "Intermediate",
     accent: "#9999FF",
-    image: "/images/course-premiere.png",
+    image: "/images/courses/premiere.png",
   },
   {
     id: "after-effects",
@@ -151,7 +155,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 8,000",
     level: "Advanced",
     accent: "#9999FF",
-    image: "/images/course-aftereffects.png",
+    image: "/images/courses/aftereffects.png",
   },
   {
     id: "figma-design",
@@ -161,7 +165,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 5,000",
     level: "Beginner",
     accent: "#F24E1E",
-    image: "/images/course-uiux.png",
+    image: "/images/courses/figma.png",
   },
   {
     id: "ai-tools",
@@ -171,7 +175,7 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 4,000",
     level: "Beginner",
     accent: "#10A37F",
-    image: "/images/course-ai.png",
+    image: "/images/courses/ai.png",
   },
   {
     id: "digital-media",
@@ -181,6 +185,6 @@ export const ALL_COURSES: Course[] = [
     price: "PKR. 8,000",
     level: "Intermediate",
     accent: "#0EA5E9",
-    image: "/images/course-marketing.png",
+    image: "/images/courses/social.png",
   },
 ];

@@ -288,7 +288,7 @@ export default function RegistrationForm() {
                         active ? "border-navy shadow-md" : "border-border hover:border-sky"
                       }`}
                     >
-                      <Image src={m.logo} alt={m.name} width={120} height={36} className="h-8 w-auto" />
+                      <Image src={m.logo} alt={m.name} width={120} height={48} className="h-10 w-auto object-contain" />
                       <span className="text-xs font-semibold text-navy">{m.name}</span>
                     </button>
                   );
@@ -302,8 +302,8 @@ export default function RegistrationForm() {
                   src={selectedMethod.logo}
                   alt={selectedMethod.name}
                   width={110}
-                  height={34}
-                  className="h-8 w-auto"
+                  height={48}
+                  className="h-10 w-auto object-contain"
                 />
                 <p className="text-xs text-muted flex-1">{selectedMethod.transferHint}</p>
               </div>
