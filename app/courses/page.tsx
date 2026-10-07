@@ -63,7 +63,7 @@ export default function CoursesPage() {
             </p>
             <div className="relative w-[200px] sm:w-[260px] md:w-[320px] h-[260px] sm:h-[340px] md:h-[400px] anim-float-slow">
               <Image
-                src="/images/student-pointing.png"
+                src="/images/student-pointing-cutout.png"
                 alt="ARWA student"
                 fill
                 className="object-contain object-bottom"
@@ -87,10 +87,10 @@ export default function CoursesPage() {
               <span className="h-px w-12 bg-blue/40" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-navy">
-              Popular <span className="text-blue">Courses</span>
+              Our <span className="text-blue">Courses</span>
             </h2>
             <p className="text-muted mt-3 text-sm max-w-lg mx-auto">
-              Choose from our carefully designed programs to launch your multimedia career.
+              Summer bootcamps and skill programs designed for Matric & Intermediate students.
             </p>
           </Reveal>
 

@@ -63,16 +63,43 @@ export function HomeCourseCard({ course }: { course: Course }) {
 }
 
 export function GridCourseCard({ course }: { course: Course }) {
+  const isBanner = course.image.includes("/banners/");
+
   return (
     <article className="bg-white rounded-xl overflow-hidden card-shadow border border-border/60 flex flex-col h-full card-lift">
-      <div className="relative h-28 bg-[#f3f7fc] flex items-center justify-center p-4">
-        <Image
-          src={course.image}
-          alt={course.title}
-          width={80}
-          height={80}
-          className="h-16 w-16 object-contain"
-        />
+      <div
+        className={`relative overflow-hidden ${
+          isBanner ? "aspect-[5/4] bg-[#0B1E3F]" : "h-28 bg-[#f3f7fc] flex items-center justify-center"
+        }`}
+      >
+        {isBanner ? (
+          <>
+            {/* Soft fill so side gaps never look empty */}
+            <Image
+              src={course.image}
+              alt=""
+              fill
+              aria-hidden
+              className="object-cover object-center scale-110 blur-xl opacity-50"
+              sizes="(max-width: 640px) 100vw, 280px"
+            />
+            <Image
+              src={course.image}
+              alt={course.title}
+              fill
+              className="object-contain object-center relative z-[1]"
+              sizes="(max-width: 640px) 100vw, 280px"
+            />
+          </>
+        ) : (
+          <Image
+            src={course.image}
+            alt={course.title}
+            width={80}
+            height={80}
+            className="h-16 w-16 object-contain"
+          />
+        )}
       </div>
       <div className="p-4 flex flex-col flex-1 gap-2.5">
         <h3 className="font-bold text-navy text-[15px]">{course.title}</h3>

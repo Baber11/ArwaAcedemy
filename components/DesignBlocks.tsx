@@ -14,13 +14,15 @@ export function LimitedSeatsBanner() {
         }}
       />
       <div className="relative grid md:grid-cols-[220px_1fr_auto] gap-6 md:gap-8 items-center px-5 py-8 sm:px-8 sm:py-10 md:px-10">
-        <div className="relative h-44 sm:h-52 md:h-56 anim-float-slow mx-auto md:mx-0 w-full max-w-[220px]">
+        <div className="relative h-44 sm:h-52 md:h-56 anim-float-slow mx-auto md:mx-0 w-full max-w-[220px] bg-transparent">
           <Image
-            src="/images/student-pointing.png"
+            src="/images/student-pointing-cutout.png"
             alt="ARWA student"
             fill
-            className="object-contain object-bottom"
+            unoptimized
+            className="object-contain object-bottom bg-transparent"
             sizes="220px"
+            style={{ background: "transparent" }}
           />
         </div>
 

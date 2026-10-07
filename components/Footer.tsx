@@ -8,11 +8,11 @@ export default function Footer() {
       <div className="container-site py-12 md:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <Image
-            src="/images/logo.png"
+            src="/images/logofooter.png"
             alt={SITE.name}
-            width={159}
-            height={57}
-            className="h-11 w-auto mb-4 brightness-0 invert"
+            width={542}
+            height={184}
+            className="h-12 sm:h-14 w-auto mb-4"
           />
           <p className="text-white/70 text-sm leading-relaxed mb-5 max-w-xs">
             Empowering students with practical multimedia skills for freelancing,
