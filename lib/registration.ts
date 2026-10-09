@@ -67,16 +67,18 @@ export const PAYMENT_METHODS: {
 ];
 
 export const COURSES = [
-  "Canva Design",
-  "CapCut Video Editing",
-  "UI/UX Design (Figma)",
+  "CIT + AI",
+  "Canva + CapCut",
+  "UI & UX Design",
+  "YouTube Channel",
   "Digital Marketing",
-  "YouTube Channel & Earning",
-  "Adobe Photoshop",
-  "Adobe Illustrator",
-  "Adobe Premiere Pro",
-  "Adobe After Effects",
+  "E-Commerce",
+  "Video Editing",
+  "Graphic Designing",
+  "1 Year Course",
+  "5 In 1 Bundle Offer",
   "AI Generative Tools",
+  "50% Discount Offer Course",
 ];
 
 export const QUALIFICATIONS = [

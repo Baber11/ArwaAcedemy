@@ -13,20 +13,21 @@ export function LimitedSeatsBanner() {
             "radial-gradient(circle at 80% 20%, rgba(58,190,249,0.25), transparent 45%), radial-gradient(circle at 10% 80%, rgba(255,193,7,0.12), transparent 40%)",
         }}
       />
-      <div className="relative grid md:grid-cols-[220px_1fr_auto] gap-6 md:gap-8 items-center px-5 py-8 sm:px-8 sm:py-10 md:px-10">
-        <div className="relative h-44 sm:h-52 md:h-56 anim-float-slow mx-auto md:mx-0 w-full max-w-[220px] bg-transparent">
+      <div className="relative grid md:grid-cols-[200px_1fr_auto] gap-6 md:gap-8 items-end px-5 pt-8 sm:px-8 sm:pt-10 md:px-10">
+        <div className="relative mx-auto md:mx-0 w-full max-w-[200px] self-end">
           <Image
             src="/images/student-pointing-cutout.png"
             alt="ARWA student"
-            fill
+            width={1235}
+            height={1885}
             unoptimized
-            className="object-contain object-bottom bg-transparent"
+            className="w-full h-auto block scale-x-[-1]"
             sizes="220px"
-            style={{ background: "transparent" }}
+            style={{ width: "100%", height: "auto" }}
           />
         </div>
 
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left pb-8 sm:pb-10">
           <h2 className="text-[#F5C518] text-2xl sm:text-3xl md:text-4xl font-black italic tracking-wide mb-2">
             LIMITED SEATS AVAILABLE!
           </h2>
@@ -42,7 +43,7 @@ export function LimitedSeatsBanner() {
           </Link>
         </div>
 
-        <div className="flex md:flex-col gap-3 justify-center">
+        <div className="flex md:flex-col gap-3 justify-center pb-8 sm:pb-10">
           {[
             { value: "500+", label: "Students Enrolled", icon: "users" },
             { value: "50+", label: "Courses Available", icon: "book" },

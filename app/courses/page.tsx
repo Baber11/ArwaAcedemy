@@ -27,8 +27,8 @@ export default function CoursesPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-navy doodle-grid">
-        <div className="container-site relative grid lg:grid-cols-2 gap-6 lg:gap-8 items-center py-10 sm:py-12 md:py-16">
-          <Reveal className="text-white order-2 lg:order-1" delay={80}>
+        <div className="container-site relative grid lg:grid-cols-2 gap-6 lg:gap-8 items-end pt-10 sm:pt-12 md:pt-16">
+          <Reveal className="text-white order-2 lg:order-1 pb-10 sm:pb-12 md:pb-16" delay={80}>
             <p className="text-yellow text-xs font-bold tracking-[0.25em] uppercase mb-3">
               Our Courses
             </p>
@@ -57,17 +57,19 @@ export default function CoursesPage() {
             </div>
           </Reveal>
 
-          <Reveal className="relative flex justify-center lg:justify-end order-1 lg:order-2">
-            <p className="absolute top-0 right-2 md:right-8 font-script text-yellow text-xl sm:text-2xl md:text-3xl rotate-[-8deg] z-10 drop-shadow anim-bob">
+          <Reveal className="relative flex justify-center lg:justify-end items-end order-1 lg:order-2 self-end">
+            <p className="absolute top-2 right-2 md:right-8 font-script text-yellow text-xl sm:text-2xl md:text-3xl rotate-[-8deg] z-10 drop-shadow anim-bob">
               Your Future Starts Here!
             </p>
-            <div className="relative w-[200px] sm:w-[260px] md:w-[320px] h-[260px] sm:h-[340px] md:h-[400px] anim-float-slow">
+            <div className="relative w-[200px] sm:w-[260px] md:w-[320px]">
               <Image
                 src="/images/student-pointing-cutout.png"
                 alt="ARWA student"
-                fill
-                className="object-contain object-bottom"
+                width={1235}
+                height={1885}
+                className="w-full h-auto block scale-x-[1.7]"
                 sizes="(max-width: 640px) 200px, 320px"
+                style={{ width: "100%", height: "auto" }}
                 priority
               />
             </div>

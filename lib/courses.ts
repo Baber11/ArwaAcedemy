@@ -72,8 +72,8 @@ export const ALL_COURSES: Course[] = [
     title: "Summer Bootcamp",
     description:
       "Flat 50% discount on all courses — Graphic Designing, Artificial Intelligence, Digital Marketing & Video Editing for Matric & Intermediate students.",
-    duration: "03 Months",
-    price: "PKR. 3,000",
+    duration: "08 Months",
+    price: "PKR. 4,000",
     level: "Beginner",
     accent: "#1a6dff",
     image: "/images/banners/summer-bootcamp-discount.png",
@@ -105,8 +105,8 @@ export const ALL_COURSES: Course[] = [
     title: "5 in 1 Bundle Offer",
     description:
       "5 powerful skills, 1 unbeatable price — Photoshop, Canva, Premiere, CapCut & Digital Media Marketing.",
-    duration: "03 Months",
-    price: "PKR. 8,000",
+    duration: "06 Months",
+    price: "PKR. 5,000",
     level: "Beginner",
     accent: "#E31E24",
     image: "/images/banners/bundle-5in1.png",
@@ -127,7 +127,7 @@ export const ALL_COURSES: Course[] = [
     title: "Summer Apprenticeship Opportunity",
     description:
       "Hands-on training across Photoshop, Illustrator, Premiere, CapCut, Canva, After Effects, Figma, AI & Digital Media Marketing.",
-    duration: "03 Months",
+    duration: "01 Year",
     price: "PKR. 5,000",
     level: "Beginner",
     accent: "#F5A623",
@@ -149,8 +149,8 @@ export const ALL_COURSES: Course[] = [
     title: "Graphic Designing, AI & Premiere",
     description:
       "Summer Bootcamp covering graphic designing, AI tools and Adobe Premiere for Matric & Intermediate students.",
-    duration: "03 Months",
-    price: "PKR. 6,000",
+    duration: "04 Months",
+    price: "PKR. 5,500",
     level: "Intermediate",
     accent: "#6C63FF",
     image: "/images/banners/bootcamp-graphic-design.png",
@@ -161,7 +161,7 @@ export const ALL_COURSES: Course[] = [
     description:
       "Learn how AI works, create smarter solutions, and build innovative projects — the future is here.",
     duration: "02 Months",
-    price: "PKR. 4,000",
+    price: "PKR. 6,000",
     level: "Beginner",
     accent: "#E31E24",
     image: "/images/banners/generative-ai.png",
@@ -172,7 +172,7 @@ export const ALL_COURSES: Course[] = [
     description:
       "Turn your creativity into a powerful skill — Premiere Pro & After Effects for Matric & Intermediate students.",
     duration: "03 Months",
-    price: "PKR. 6,000",
+    price: "PKR. 5,000",
     level: "Intermediate",
     accent: "#F5C518",
     image: "/images/banners/bootcamp-video-editing.png",
@@ -182,8 +182,8 @@ export const ALL_COURSES: Course[] = [
     title: "E-Commerce Summer Bootcamp",
     description:
       "Master 2 powerful platforms — build your Shopify store and sell globally on Amazon.",
-    duration: "03 Months",
-    price: "PKR. 5,000",
+    duration: "06 Months",
+    price: "PKR. 6,000",
     level: "Beginner",
     accent: "#96BF48",
     image: "/images/banners/bootcamp-ecommerce.png",
